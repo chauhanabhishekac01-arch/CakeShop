@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="logoc.jpg" href="logoc.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Pacifico&family=Petit+Formal+Script&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <style>
+        body{
+            height: 500vh;
+            margin-inline: 60px;
+            overflow-x: hidden;
+        }
+        .page{
+            margin: 20px;
+            height: 100vh;
+        }
+        .logoc{
+            height: 55px;
+            width: 60px;
+            border-radius: 25px 0px 0px 25px;
+        }
+        .navbar{
+            height: 50px;
+            width: 91%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 1px;
+            z-index: 4;
+            color: white;
+            border-radius: 25px;
+            
+        }
+        .navbar a{
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        .navbar a:hover{
+            text-decoration: underline;
+        }
+        .hero{
+            margin: 50px 0px 0px 0px;
+            height: 95vh;
+        }
+
+        .heroo{
+            margin: 0px 0px 0px 0px;
+            position: relative;
+            justify-content: center;
+        }
+        .heroi{
+            height: 100%;
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 25px;
+        }
+        .herot{
+            position: absolute;
+            top: 25%;
+            left: 20%;
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+        }
+        .cta{
+            background-color: orange;
+            height: 40px;
+            width: 150px;
+            border-radius: 25px;
+            animation: gm 1s infinite;
+        }
+        @keyframes gm{
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(5px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        .cta:hover{
+            background: linear-gradient(to right, white, rgb(247, 207, 135));
+        }
+        .ncta{
+            height: 40px;
+            width: 150px;
+            border-radius: 25px;
+            color: black;
+            background-color: rgb(248, 247, 247);
+        }
+        .herot i{
+            color: orange;
+            text-decoration: underline;
+        }
+        .about{
+            height: 80vh;
+        }
+        .abouta{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-self: center;
+            column-gap: 20px;
+        }
+        .abouta img{
+            justify-self: center;
+            border-radius: 25px;
+            transition: transform 1s ease-in-out;
+            animation: ff 1s ease forwards;
+            animation-timeline: view();
+            animation-range: entry 0 cover 40%;
+        }
+         @keyframes ff {
+            from {
+                transform: translateX(100px); /* start below */
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0); /* move to normal position */
+                opacity: 1;
+            }
+        }
+        
+        .abouta img:hover{
+            transform: scale(1.1);
+        }
+        
+        .aboutt{
+            justify-self: center;
+            border: 1px solid black;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;   /* stack text vertically */
+            justify-content: center;  /* vertical center */
+            align-items: center;      /* horizontal center */
+            text-align: center;
+            animation: fft 1s ease forwards;
+            animation-timeline: view();
+            animation-range: entry 0 cover 40%;
+        }
+        @keyframes fft {
+            from {
+                transform: translateX(-100px); /* start below */
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0); /* move to normal position */
+                opacity: 1;
+            }
+        }
+        .box{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 20px;
+            height: 85%;
+            animation: card 1s ease forwards;
+            animation-timeline: view();
+            animation-range: entry 0 cover 60%;
+        }
+        @keyframes card {
+            from {
+                transform: translateY(100px); /* start below */
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0); /* move to normal position */
+                opacity: 1;
+            }
+        }
+        .card{
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+        }
+        .card img:hover{
+            transform: scale(1.1);
+            overflow: hidden;
+
+        }
+        .card img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+            transition: transform 1s ease;
+        }
+        .cardt{
+            background-color: rgba(0, 0, 0, 0.3);
+            height: auto;
+            width: 100%;
+            color: white;
+            z-index: 2;
+            position: absolute;
+            bottom: 1px;
+            text-align: center;
+            border-radius: 25px;
+
+        }
+        .pw{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-inline: 20px;
+        }
+        .pw button{
+            background-color: rgb(102, 250, 102);
+            border-radius: 25px;
+            font-size: 1rem;
+            height: 40px;
+            width: 120px;
+        }
+        .rand{
+            font-size: 1rem;
+            bottom: 10px;
+            right: 10px;
+        }
+        .faq{
+            height: 178vh;
+        }
+        .fbox{
+            display: grid;
+            grid-template-columns: 1fr;
+            border: 1px solid black;
+            border-radius: 25px;
+        }
+        .qes{
+            border: 1px solid gray;
+            margin: 0px;
+            padding: 0px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+        }
+        .qes:hover{
+            scale: 1.1;
+            transform: translateX(60px);
+            text-decoration: underline;
+            border: none;
+            
+        }
+        .gbox{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 5px;
+            border-radius: 25px;
+            margin-inline: 20px;
+            justify-self: center;
+        }
+        .gbox img{
+            justify-self: center;
+            height: 100%;
+            width: 100%;
+            border-radius: 25px;  animation: g 1s ease forwards;
+            animation-timeline: view();
+            animation-range: entry 0 cover 40%;
+        }
+        @keyframes g {
+            from {
+                transform: scale(0); /* start below */
+                opacity: 0;
+            }
+            to {
+                transform: scale(1); /* move to normal position */
+                opacity: 1;
+            }
+        }
+        .gallary{
+            height: 110vh;
+        }
+        .review{
+            height: 110vh;
+        }
+        .rbox{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .square{
+            height: 100%;
+            width: 100%;
+            
+
+        }
+        .rec{
+            height: 100%;
+            width: 100%;
+            
+            
+        }
+        .contact{
+            height: 50vh;
+        }
+        .cont{
+            display: flex;
+            justify-content: space-between;
+            margin-inline: 20px;
+        }
+        .cont img{
+            height: 220px;
+            width: 220px;
+            border-radius: 25px;
+            border: 1px solid black;
+        }
+        .cont div{
+            line-height: 25px;
+            border: 1px solid black;
+            width: 20%;
+            font-size: 1.3rem;
+            text-align: center;
+            border-radius: 25px;
+        }
+        .heading{
+            margin: 0px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            text-align: center;
+            font-family: "Pinyon Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 3.9rem;
+        }
+        .left{
+            animation: left 1s ease forwards;
+            animation-timeline: view();
+            animation-range: entry 0 cover 40%;
+        }
+          @keyframes left {
+            from {
+                transform: translateX(-100px); /* start below */
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0); /* move to normal position */
+                opacity: 1;
+            }
+        }
+        .left:hover{
+            margin-left: 60px;
+        }
+        .right{
+            animation: right 1s ease forwards;
+            animation-timeline: view();
+            animation-range: entry 0 cover 40%;
+        }
+          @keyframes right {
+            from {
+                transform: translateX(100px); /* start below */
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0); /* move to normal position */
+                opacity: 1;
+            }
+        }
+        .right:hover{
+            margin-left: 60px;
+        }
+        .float {
+            position: fixed; /* makes it stick to the viewport */
+            z-index: 6;
+            border: 1px solid black;
+            bottom: 10px;
+            right: 10px;
+            height: 50px;
+            width: 220px;
+            text-align: center;
+            font-size: 0.7rem;
+            background-color: rgb(79, 250, 79);
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .float a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .float:hover {
+        box-shadow: 0 0 15px 4px rgba(79, 250, 79, 0.8); /* glowing shadow */
+        transform: translateY(-2px); /* optional lift effect */
+        color: black;
+    }
+    .share{
+        cursor: pointer;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .share:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* black shadow */
+        transform: translateY(-2px); /* optional lift effect */
+    }
+    @media only screen and (max-width: 600px) {
+        body{
+            margin: 0px;
+            height: 600vh;
+        }
+        .page{
+            height: 100vh;
+        }
+        .heroo{
+            height: 100vh;
+        }
+        .heroi{
+            object-fit: cover;
+        }
+        .herot{
+            line-height: 60px;
+            left: 10px;
+            top: 100px;
+        }
+        .navbar{
+            width: 400px;
+        }
+        .box{
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+        .abouta{
+            grid-template-columns: 1fr;
+        }
+        .gbox{
+            height: 95%;
+            width: 100%;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .gallary{
+            height: 220vh;
+        }
+        .faq{
+            height: 160vh;
+        }
+        .rbox{
+            grid-template-columns: 1fr;
+
+
+        }
+        .contact{
+            height: 80vh;
+        }
+        .cont{
+            flex-direction: column;
+            align-items: center;
+        }
+        .cont div{
+            width: 220px;
+            line-height: 30px;
+        }
+        .abouta img{
+            height: 90%;
+            width: 90%;
+        }
+        .aboutt{
+            text-align: left;
+            height: 300px;
+            width: 310px;
+        }
+        .herot{
+            font-size: 1.5rem;
+        }
+        .navbar a{
+            font-size: 0.8rem;
+        }
+        .abouta{
+            column-gap: 0px;
+            justify-self: center;
+            align-items: center;
+        }
+        .about{
+            height: 85vh;
+        }
+        .float{
+            width: 200px;
+            font-size: 0.7rem;
+        }
+
+    }
+    </style>
+</head>
+<body>
+    <div class="float">
+        <a href="https://wa.me/917983427187?text=Hi" target="_blank"><h1>Chat With Us</h1></a>a>
+    </div>
+    <nav class="navbar">
+            <img class="logoc"src="logoc.jpg">
+            <a href="#hero">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+            <a href="https://wa.me/917983427187?text=Hi" target="_blank"><button class="cta">Book Now</button></a>
+        </nav>
+    <div class="page hero" id="hero">
+        
+        <div class="heroo">
+            <img class="heroi"src="hero.jpg">
+            <div class="herot">
+                <h1><i>Fresh</i> Cakes, <i>free</i> Devilery</h1>
+                <p>Lions BakeryLions bakery is the bakery <br>which understands your need</p><br>
+                <a href="https://wa.me/917983427187?text=Hi" target="_blank"><button class="cta">Book Now</button></a><button class="ncta">Learn More</button>
+                <p class="rand">More than 5,000+ happy customers</p>
+            </div>
+        </div>
+    </div>
+    <div class="page products" id="products"><div class="pw"><h1 class="heading">Products</h1><a href="https://wa.me/?text=Check%20out%20Lion%20Bakery%20website%20at%20https://example.com" target="_blank"><button class="share">Share</button></a></div><br>
+        <div class="box">
+            <div class="card">
+                <img src="cake.jpg">
+                <div class="cardt">
+                <h1>Super Delight</h1>
+                <p>Wedding, Anniversary</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="cake2.jpg">
+                <div class="cardt">
+                <h1>Red Gloss</h1>
+                <p>Anniversary, Birthday</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="cake3.jpg">
+                <div class="cardt">
+                <h1>CoCo King</h1>
+                <p>Birthday, Celebration</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="page about" id="about"><h1 class="heading">About</h1><br>
+        <div class="abouta">
+            <div class="aboutt">
+                <h1>-Lion Baker</h1>
+                <p>The lion bakery is one of the old bakery in model town, it was 
+                    started in 19th century by Sir Badal Chauhan. From then the
+                    the recepies are passed down by 6 genrations of bakers, and
+                    and finally in 2026 the shop is owned and managed by Saufi</p>
+                <a href="https://wa.me/917983427187?text=Hi" target="_blank"><button class="cta">Book Now</button></a>
+            </div>
+            <img src="shop.jpg">
+        </div>
+    </div>
+    <div class="page gallary" id="gallary"><h1 class="heading">Gallary</h1><br>
+        <div class="gbox">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+            <img src="cake.jpg">
+
+        </div>
+    </div>
+    <div class="page faq" id="faq"><h1 class="heading">Faq</h1><br>
+        <div class="fbox">
+            <div class="qes left">
+                <h3>1.Do we make sugar free cakes?</h3>
+                <p> Yes, we do make them on orders</p>
+            </div>
+            <div class="qes right">
+                <h3>2.Do we delivery in a day?</h3>
+                <p> Yes, we do delivery intra state in a day.</p>
+            </div>
+            <div class="qes left">
+                <h3>3.Do we gift wrap your order?</h3>
+                <p> Yes, if specified we do it for free.</p>
+            </div>
+            <div class="qes right">
+                <h3>4.Do you get a refund if the cake arrives damaged?</h3>
+                <p> Yes, a refund of 25% is availed if the cake is damaged</p>
+            </div>
+            <div class="qes left">
+                <h3>5.Do we offer indine facility?</h3>
+                <p> Yes, but for only 4 guests at a time</p>
+            </div>
+            <div class="qes right">
+                <h3>6.Do we make eggless and egg cakes seperately?</h3>
+                <p> Yes, we are very cautious about the hygen</p>
+            </div>
+            <div class="qes left">
+                <h3>7.Do you get to meed the baker?</h3>
+                <p> Yes, sometimes the guests wishes to compliment so we let them greet</p>
+            </div>
+            <div class="qes right">
+                <h3>8.Do we customize cakes?</h3>
+                <p> Yes, if asked nicely we can add on items without cost</p>
+            </div>
+            <div class="qes left">
+                <h3>9.Do you get free delivery?</h3>
+                <p> Yes, only up to 3km of the shop</p>
+            </div>
+            <div class="qes right">
+                <h3>10.Do we collobrate?</h3>
+                <p> Yes, we do collobrate if asked nicely</p>
+            </div>
+            
+
+        </div>
+    
+    </div>
+    <div class="page review" id="review"><h1 class="heading">Reviews</h1>
+        <div class="rbox">
+            <img class="square" src="r1.jpg">
+            <img class="square" src="r1.jpg">
+            <img class="rec" src="r1.jpg">
+            <img class="rec" src="r1.jpg">
+        </div>
+    </div>
+    <div class="page contact" id="contact"><h1 class="heading">Contact Us</h1><br>
+        <div class="cont">
+            <a href="#hero"><img src="logoc.jpg"></a>
+            <div class="textc">
+                <h1>Lion Bakery</h1>
+                <p>Nan Para House<br>
+                Landour,<br>
+                Mussoorie,<br>
+                Contact: 7983247187</p>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=The+Misty+Haven" target="_blank"><img src="map.jpg"></a>
+        </div>
+    </div>
+</body>
+</html>
